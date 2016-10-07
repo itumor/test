@@ -1,0 +1,14 @@
+--- # COMMENT ABOUT PLAYBOOK 
+- hosts: centos   
+  remote_user: ansible   
+  become: yes   
+  become_method: sudo
+  connection: ssh   
+  gather_facts: yes   
+  vars:     
+    usernmae: myuser     
+  tasks:   
+  - name: Some description of what we are doing     
+    yum:       
+      name: httpd       
+      state: latest  
